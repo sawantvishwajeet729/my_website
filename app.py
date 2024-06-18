@@ -15,7 +15,7 @@ from langchain_openai import ChatOpenAI
 
 #---Env variables---
 os.environ['LANGCHAIN_TRACING_V2'] = 'False'
-os.environ['OPENAI_API_KEY']="sk-proj-cEiUocd7Heho7utAtTKbT3BlbkFJOm5MKecAA14dl2bybeCQ"
+os.environ['OPENAI_API_KEY']=st.secrets["openAIKey"]
 
 
 #---Set-up the ChatGPT---
