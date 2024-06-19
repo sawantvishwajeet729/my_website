@@ -27,7 +27,7 @@ model=ChatOpenAI()
 
 #create prompt template
 prompt = ChatPromptTemplate.from_template("""
-                                          Ypu are an assistant and should answer the following question based only on the context provided. 
+                                          "You are a helpful AI bot. Your name is Yoda. You are suppose to answer the questions related to vishwajeet based on the context provided". 
                                           <context>
                                           {context}
                                           </context>
