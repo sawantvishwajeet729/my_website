@@ -43,7 +43,7 @@ retriver = db.as_retriever()
 retrival_chain = create_retrieval_chain(retriver, document_chain)
 
 #---Streamlit code ---
-st.set_page_config(page_title="Chatbot", page_icon=":desktop_computer:")
+st.set_page_config(page_title="Chatbot", page_icon=":desktop_computer:", layout="wide")
 
 #---lottie load funtion---
 
@@ -54,33 +54,49 @@ def load_lottieurl(url):
     return r.json()
 
 #---Load assets---
-#lottie_asset = load_lottieurl("https://lottie.host/6c5c7896-f364-402a-8384-959f8c1d57da/Vz1FkDM4Uj.json")
+lottie_asset = load_lottieurl("https://lottie.host/edfd046e-38c7-4e08-997f-0d74f9ed3252/vHppEor6Zm.json")
 
-#---header section---
+with st.sidebar:
+    #---header section---
+    with st.container():
+        st.title("Hi there :wave:")
+        st.title("Welcome to Vishwajeet's website")
+        st.header("Who is Vishwajeet? :thinking_face:")
+        st.subheader("Vishwajeet is an experienced Data Scientist with a diverse background spanning ten years, including six years of expertise in machine learning and computer vision projects. Prior to transitioning to data science, he spent four years as a Mechanical Design Engineer, specializing in aerospace and railway part design. Proficient in Python and SQL, he possess a comprehensive understanding of various supervised and unsupervised machine learning techniques, coupled with a proven track record of delivering impactful solutions across various industries.")
+        st.write("If you want to know more about Vishwajeet, just ask Yoda. He is right there on right side of the screen")
+
+    #with st.container():
+
+        #input_text = st.text_input("Ask ChatGPT about Vishwajeet's experience or professional work")
+
+        #if input_text:
+            #response = retrival_chain.invoke({'input':input_text})
+            #st.write(response['answer'])
+    
+    with st.container():
+        st.write("---")
+        st.subheader("Follow Vishwajeet on:")
+        st.write("[LinkedIn >](https://www.linkedin.com/in/sawantvishwajeet729/)")
+        st.write("[Medium >](https://medium.com/@sawantvishwajeet729)")
+        st.write("[Email >](sawantvishawjeet729@gmail.com)")
+
 with st.container():
-    st.subheader("Hi there :wave:")
-    st.title("Welcome to Vishwajeet's AI chatbot")
+    text_1, anime = st.columns((2, 1))
+    with text_1:
+        st.header("Hi there :wave:")
+        st.write("I am Yoda, Vishwajeet's AI assistant.")
+        st.write("You can ask about Vishwajeet's professional work, skills and qualities")
+    with anime:
+        #st.write('yoda animation')
+        st_lottie(lottie_asset)
 
-    st.subheader("I am here to help you get to know Vishwajeet's professional experience")
-
-with st.container():
-    st.write("---")
-    st.subheader("ChatGPT")
-    text_col, image_col = st.columns((2,1))
-
-    with text_col:
-        input_text = st.text_input("Ask ChatGPT about Vishwajeet's experince or professional work")
-
-    with text_col:
-        if input_text:
-            response = retrival_chain.invoke({'input':input_text})
-            st.write(response['answer'])
-        #st_lottie(lottie_asset)
 
 
 with st.container():
-    st.write("---")
-    st.subheader("Follow Vishwajeet on:")
-    st.write("[LinkedIn >](https://www.linkedin.com/in/sawantvishwajeet729/)")
-    st.write("[Medium >](https://medium.com/@sawantvishwajeet729)")
-    st.write("[Email >](sawantvishawjeet729@gmail.com)")
+    messages = st.container(height=350)
+    if input_text := st.chat_input("Ask Yoda about Vishwajeet"):
+        messages.chat_message("user").write(input_text)
+        response = retrival_chain.invoke({'input':input_text})
+        messages.chat_message("ai").write(f"Yoda: {response['answer']}")
+
+
