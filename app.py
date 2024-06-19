@@ -88,7 +88,7 @@ with st.container():
         st.write("You can ask about Vishwajeet's professional work, skills and qualities")
     with anime:
         #st.write('yoda animation')
-        st_lottie(lottie_asset, height=200)
+        st_lottie(lottie_asset, height=150)
 
 
 
