@@ -62,7 +62,7 @@ with st.sidebar:
         st.title("Hi there :wave:")
         st.title("Welcome to Vishwajeet's website")
         st.header("Who is Vishwajeet? :thinking_face:")
-        st.subheader("Vishwajeet is an experienced Data Scientist with a diverse background spanning ten years, including six years of expertise in machine learning and computer vision projects. Prior to transitioning to data science, he spent four years as a Mechanical Design Engineer, specializing in aerospace and railway part design. Proficient in Python and SQL, he possess a comprehensive understanding of various supervised and unsupervised machine learning techniques, coupled with a proven track record of delivering impactful solutions across various industries.")
+        st.write("Vishwajeet is an experienced Data Scientist with a diverse background spanning ten years, including six years of expertise in machine learning and computer vision projects. Prior to transitioning to data science, he spent four years as a Mechanical Design Engineer, specializing in aerospace and railway part design. Proficient in Python and SQL, he possess a comprehensive understanding of various supervised and unsupervised machine learning techniques, coupled with a proven track record of delivering impactful solutions across various industries.")
         st.write("If you want to know more about Vishwajeet, just ask Yoda. He is right there on right side of the screen")
 
     #with st.container():
