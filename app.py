@@ -109,7 +109,7 @@ with st.container():
 
 
 with st.container():
-    messages = st.container(height=200)
+    messages = st.container(height=300)
     if input_text := st.chat_input("Ask Yoda about Vishwajeet"):
         messages.chat_message("user").write(input_text)
         response = retrival_chain.invoke({'input':input_text})
