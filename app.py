@@ -1,6 +1,8 @@
 #Libraries to be imported
+import time
 import os
 import requests
+import random
 import streamlit as st
 from streamlit_lottie import st_lottie
 
@@ -53,8 +55,22 @@ def load_lottieurl(url):
         return None
     return r.json()
 
+#---write stream function---
+def stream_data(text_stream):
+    for word in text_stream.split(" "):
+        yield word + " "
+        time.sleep(0.08)
+
 #---Load assets---
 lottie_asset = load_lottieurl("https://lottie.host/edfd046e-38c7-4e08-997f-0d74f9ed3252/vHppEor6Zm.json")
+
+#---suggestion library---
+questions  = ["What is Vishwajeet's current position?", 
+              "How many years of experience does Vishwajeet's has?", 
+              "What programming languages is Vishwajeet comfortable with?",
+              "What are some projects that Vishwajeet has worked on",
+              "How many organisation has Vishwajeet worked for?",
+              "Which industries does Vishwajeet has exposure to?"]
 
 with st.sidebar:
     #---header section---
@@ -83,7 +99,7 @@ with st.sidebar:
 with st.container():
     text_1, anime = st.columns((2, 1))
     with text_1:
-        st.header("Hi there :wave:")
+        st.header("Hi :wave:")
         st.write("I am Yoda, Vishwajeet's AI assistant.")
         st.write("You can ask about Vishwajeet's professional work, skills and qualities")
     with anime:
@@ -93,10 +109,26 @@ with st.container():
 
 
 with st.container():
-    messages = st.container(height=350)
+    messages = st.container(height=200)
     if input_text := st.chat_input("Ask Yoda about Vishwajeet"):
         messages.chat_message("user").write(input_text)
         response = retrival_chain.invoke({'input':input_text})
         messages.chat_message("ai").write(f"Yoda: {response['answer']}")
+
+
+with st.container():
+
+    if st.button("Need suggestions for questions?"):
+        # Create an empty container
+        placeholder = st.empty()
+        
+        #create random number list
+        rand_int = random.sample(range(1, len(questions)), len(questions)-2)
+        
+        # Display each question one at a time with a delay
+        for i in rand_int:
+            placeholder.text(questions[i])
+            time.sleep(4)  # Delay for 5 seconds
+            placeholder.empty()  # Clear the previous question
 
 
