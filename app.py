@@ -71,10 +71,10 @@ questions  = ["What is Vishwajeet's current position?",
               "What are some projects that Vishwajeet has worked on",
               "How many organisation has Vishwajeet worked for?",
               "Which industries does Vishwajeet has exposure to?",
-              "Does vishwajeet has leadership qualities? explain with an example",
-              "Give me an example of Vishwajeet problem solving skill",
-              "How well can Vishwajeet adapt to difficult situation",
-              "What sets Vishwajeet apart from his competition"]
+              "Does vishwajeet has leadership qualities? explain with an example?",
+              "Give me an example of Vishwajeet problem solving skill.",
+              "How well can Vishwajeet adapt to difficult situation?",
+              "What sets Vishwajeet apart from his competition?"]
 
 with st.sidebar:
     #---header section---
