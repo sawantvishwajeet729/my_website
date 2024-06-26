@@ -22,7 +22,7 @@ os.environ['OPENAI_API_KEY']=st.secrets["openAIKey"]
 
 #---Set-up the ChatGPT---
 #load vector db
-db = FAISS.load_local("v_resume_vec", OpenAIEmbeddings(), allow_dangerous_deserialization=True)
+db = FAISS.load_local("v_resume and bio_vec", OpenAIEmbeddings(), allow_dangerous_deserialization=True)
 
 #ChatGPT model
 model=ChatOpenAI()
