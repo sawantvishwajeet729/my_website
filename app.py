@@ -68,7 +68,7 @@ lottie_asset = load_lottieurl("https://lottie.host/edfd046e-38c7-4e08-997f-0d74f
 questions  = ["What is Vishwajeet's current position?", 
               "How many years of experience does Vishwajeet's has?", 
               "What programming languages is Vishwajeet comfortable with?",
-              "What are some projects that Vishwajeet has worked on",
+              "What are some projects that Vishwajeet has worked on?",
               "How many organisation has Vishwajeet worked for?",
               "Which industries does Vishwajeet has exposure to?",
               "Does vishwajeet has leadership qualities? explain with an example?",
