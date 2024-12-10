@@ -98,7 +98,7 @@ with st.sidebar:
         st.subheader("Follow Vishwajeet on:")
         st.write("[LinkedIn >](https://www.linkedin.com/in/sawantvishwajeet729/)")
         st.write("[Medium >](https://medium.com/@sawantvishwajeet729)")
-        st.write("[Email >](sawantvishawjeet729@gmail.com)")
+        st.write("[Email >](sawantvishwajeet729@gmail.com)")
 
 with st.container():
     text_1, anime = st.columns((2, 1))
